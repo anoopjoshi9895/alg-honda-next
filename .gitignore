@@ -4,7 +4,8 @@
 #     https://www.atlassian.com/git/tutorials/saving-changes/gitignore
 
 # Node artifact files
-
+node_modules/
+dist/
 
 # Compiled Java class files
 *.class
@@ -20,7 +21,7 @@
 
 # Maven
 target/
-
+dist/
 
 # JetBrains IDE
 .idea/
@@ -47,3 +48,5 @@ Thumbs.db
 *.mov
 *.wmv
 
+/.next
+/node_modules
