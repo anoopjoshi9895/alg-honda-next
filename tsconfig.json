@@ -13,7 +13,12 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "alg-ecom-frontend-core": ["components/alg-ecom-frontend-core"],
+      
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "models"],
   "exclude": ["node_modules"]

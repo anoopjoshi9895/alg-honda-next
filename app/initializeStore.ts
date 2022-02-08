@@ -2,9 +2,9 @@
 // import unauthorizedApiResponseInterceptor from '../api/interceptor';
 
 import {
+  api,
   authActions,
   commonActions,
-  api,
   UseUnauthorizedApiResponseInterceptor,
 } from "alg-ecom-frontend-core";
 import { RootState } from "./store";

@@ -1,0 +1,31 @@
+import { AppSettingsDataViewModel, AppSettingsStateViewModel } from './ViewModel';
+import { Dispatch } from 'redux';
+import { IAction, IActionWithPayload } from '../../utils/action-utils';
+export * from './ViewModel';
+export declare const appSettingsReducer: (state: AppSettingsStateViewModel | undefined, action: any) => AppSettingsStateViewModel;
+export declare const appSettingsActionTypes: {
+    REQUEST: string;
+    LOADED: string;
+    ERROR: string;
+    SET_LANGUAGE_ID: string;
+    SET_SUBSITE_ID: string;
+    SET_WEBSITE_ID: string;
+    SET_HTML_DIRECTION_ID: string;
+};
+declare type RequestAppSettingsActionType = IAction<typeof appSettingsActionTypes.REQUEST>;
+declare type AppSettingsLoadedActionType = IActionWithPayload<typeof appSettingsActionTypes.LOADED, AppSettingsDataViewModel>;
+declare type AppSettingsErrorActionType = IActionWithPayload<typeof appSettingsActionTypes.ERROR, any>;
+declare type AppSettingsLanguageActionType = IActionWithPayload<typeof appSettingsActionTypes.SET_LANGUAGE_ID, any>;
+declare type AppSettingsSubSiteActionType = IActionWithPayload<typeof appSettingsActionTypes.SET_SUBSITE_ID, any>;
+declare type AppSettingsWebsiteActionType = IActionWithPayload<typeof appSettingsActionTypes.SET_WEBSITE_ID, any>;
+declare type AppSettingsHtmlDirectionActionType = IActionWithPayload<typeof appSettingsActionTypes.SET_HTML_DIRECTION_ID, any>;
+export declare const requestAppSettingsAction: () => RequestAppSettingsActionType;
+export declare const appSettingsLoadedAction: (data: AppSettingsDataViewModel) => AppSettingsLoadedActionType;
+export declare const appSettingsErrorAction: (error: any) => AppSettingsErrorActionType;
+export declare const AppSettingsLanguageAction: (id: number) => AppSettingsLanguageActionType;
+export declare const AppSettingsSubsiteAction: (id: number) => AppSettingsSubSiteActionType;
+export declare const AppSettingsWebsiteAction: (id: number) => AppSettingsWebsiteActionType;
+export declare const AppSettingsHtmlDirectionAction: (direction: string) => AppSettingsHtmlDirectionActionType;
+export declare const appSettingsActions: {
+    getAppSettings: (onComplete?: (() => void) | undefined) => (dispatch: Dispatch) => Promise<void>;
+};
