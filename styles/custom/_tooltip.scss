@@ -1,0 +1,70 @@
+.tooltip{
+    &:hover{
+        .tooltip-content{
+            transform: scale(1);
+        }    
+    }
+    .tooltip-content{
+        width: 286px;
+        bottom: 30px;
+        transform: scale(0);
+        transition: transform 0.2s ease-in-out;
+        html[dir="ltr"] &{
+            left: 7px;
+            transform-origin: left bottom;
+        }
+        html[dir="rtl"] &{
+            right: 7px;
+            transform-origin: right bottom;
+        }
+        @include media-breakpoint-down(xs) {
+            html[dir="ltr"] &{left:0;}
+            html[dir="rtl"] &{right: 0;}
+            transform-origin: center bottom !important;
+        }
+        &::after{
+            content: "";
+            width: 0;
+            height: 0;
+            border-style: solid;
+            position: absolute;
+            bottom: -14px;
+            html[dir="ltr"] &{
+                left: 0;
+                border-width: 15px 16px 0 0;
+                border-color: $white transparent transparent transparent;
+            }
+            html[dir="rtl"] &{
+                right: 0;
+                border-width: 0 15px 16px 0;
+                border-color: transparent $white transparent transparent;
+            }
+            @include media-breakpoint-down(xs) {
+                html[dir="ltr"] &{left:11px;}
+                html[dir="rtl"] &{right: 11px;}
+            }
+        }
+        &::before{
+            content: "";
+            width: 0;
+            height: 0;
+            border-style: solid;
+            position: absolute;
+            bottom: -16px;
+            html[dir="ltr"] &{
+                left: -1px;
+                border-width: 15px 16px 0 0;
+                border-color: $secondary transparent transparent transparent;
+            }
+            html[dir="rtl"] &{
+                right: -1px;
+                border-width: 0 15px 16px 0;
+                border-color: transparent $secondary transparent transparent;
+            }
+            @include media-breakpoint-down(xs) {
+                html[dir="ltr"] &{left: 10px;}
+                html[dir="rtl"] &{right: 10px;}
+            }
+        }
+    }
+}

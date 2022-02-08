@@ -1,0 +1,477 @@
+@import "custom/common-import";
+@import "plugins/slick";
+@import 'custom/banner';
+
+.w-offer-list{
+  @include media-breakpoint-down(md) {
+        // display: block;
+       white-space: nowrap;
+        overflow: auto;
+        margin-left: -8px;
+        margin-right: -8px;
+        flex-wrap: nowrap;
+        .widget-list{
+            display: inline-block;
+            white-space: normal;
+            max-width: 300px;
+            padding: 0 8px;
+        }
+    }
+}
+.widget-list{
+    .img-zoom{
+        overflow: hidden;
+        img {
+            transition: all .5s ease;
+        }
+    }
+    &:hover{
+        .text-muted.link{
+            color: $primary!important;
+        }
+        .img-zoom{
+            
+            img {
+                transform: scale(1.03);
+
+            }
+        }
+    }
+    @include media-breakpoint-down(md) {
+        .text-muted.link{
+            color: $primary!important;
+        }
+    }
+        
+    
+}
+.widget-slider{
+    .nav{
+        @include media-breakpoint-down(md) {
+            display: block;
+            white-space: nowrap;
+            overflow: auto;
+            margin: 0 -15px;
+            &::-webkit-scrollbar {
+                height: 0;
+            }
+            .nav-link{
+                display: inline-block;
+                white-space: normal;
+            }
+        }
+    }
+    .nav-link{
+        color:$gray-700; 
+        border-bottom:$white 2px solid;
+        transition: all ease .5s;
+        margin: 0 rem(15);
+        cursor: pointer;
+        .icons{
+            height: 45px;
+            img{
+                filter: grayscale(100%);
+                opacity: .5;
+                transition: all ease .5s;
+            }
+        }
+        &.active,&:hover{
+            border-color:$primary;
+            color: $primary;
+           img{
+                filter: grayscale(0);
+               opacity: 1;
+               transform: translate(0,5px);
+            } 
+        }
+    }
+    .w-slider{
+         &:not(.slick-initialized){
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            .w-slide{
+                white-space: normal;
+                display: inline-block;
+                vertical-align: top;
+            }
+        }
+    }
+    .w-content{
+        opacity: 0;
+        transition: all ease .5s;
+        @include media-breakpoint-down(md){
+            .font-sm{
+                font-size: 12px!important;
+            }
+        }
+       
+    }
+    figure{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include media-breakpoint-up(lg){
+            &.power-product{
+                height: 280px;
+               img{
+                max-height: 250px;
+                width: auto;
+               } 
+            }
+            &.marine{
+                height: 350px;
+               img{
+                max-height: 320px;
+                width: auto;
+               } 
+            }
+            &.motorcycle{
+                height: 440px;
+               img{
+                max-height: 420px;
+                width: auto;
+               } 
+            }
+            &.car{
+                height: 350px;
+               img{
+                max-height: 326px;
+                width: auto;
+               } 
+            }
+        }
+    }
+    .slick-current{
+        .w-content{
+            opacity: 1;
+        }
+    }
+    
+    .slick-arrow{
+        position: static;
+        border-radius: 50%;
+        width: 46px;
+        height: 46px;
+    }
+    .custom-arrow{
+        top:-50px;
+    }
+    .arrow-container{
+        width:65%;
+        @media (max-width: 1300px){
+            width: 80%;
+        }
+        @media (max-width: 1023px){
+            width: 83%;
+        }
+    }
+}
+.w-slider-tab{
+    &.power-product-tab .custom-arrow,&.marine-tab .custom-arrow{
+        top:-30px
+    }
+}
+
+.social-media-images {
+    .fig {
+        &:after {
+            content: '';
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
+            height: 129px;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        ul {
+            overflow: auto;
+            flex-wrap: nowrap;
+            li {
+                max-width: 300px;
+
+                div {
+                    height: 100%;
+
+                    img {
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+    }
+}
+.gallery-slider-container{
+  .arrow{
+        border-radius: 50%;
+        width: rem(46);
+        height:rem(46);
+        line-height:rem(46);
+        border:1.5px solid $gray-800;
+        display: block;
+        position: static!important;
+        text-indent: 0;
+        box-shadow: none;
+        margin: 0;
+        top:0;
+        transform:translate(0);
+        cursor: pointer;
+      i{
+        color: $gray-800 
+      }
+      &:hover{
+          border-color:$primary;
+          i{
+            color:$primary; 
+          }
+        }
+    }  
+
+   .action-btns{
+        width:50%;
+        margin: -30px 0 0;
+        @include media-breakpoint-down(lg) {
+            width:60%; 
+        } 
+        @include media-breakpoint-down(md) {
+            width:70%; 
+        }
+        @include media-breakpoint-down(sm) {
+            width:80%; 
+        }
+        @include media-breakpoint-down(xs) {
+            width:90%; 
+        }
+       .pagingInfo{
+           color: $gray-800;
+           &::first-letter{
+               color: $primary;
+           }
+       }
+    } 
+}
+.gallery{
+    .overlay{
+      background: rgba($dark,0.8);
+        transition: all ease.5s;
+    }
+    .g-content{
+        opacity: 0;
+        transition: all ease.5s;
+    }
+    &:not(.slick-initialized){
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        .gallery-slide{
+            white-space: normal;
+            display: inline-block;
+            vertical-align: top;
+        }
+    }
+    @include media-breakpoint-down(md) {
+        .font-base{
+            font-size: 14px!important;
+            text-overflow: ellipsis;
+            display: block;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .btn{
+            padding: .875rem 1rem
+        }
+    }
+    .slick-current{
+        .g-content{
+            opacity: 1;
+        }
+        .overlay{
+            opacity: 1;
+            background: rgba($dark,0.2);
+        }
+    }
+    .slick-dots {
+        position: absolute;
+        bottom: 0;
+        color: $white;
+        font-size: 14px;
+        font-weight: 600;
+        display: flex!important;
+        margin: 0;
+        width:50%; 
+        left: 25%;
+        right:25%;
+        padding: 0 8px;
+        z-index: 9;
+        @include media-breakpoint-down(lg) {
+            width:60%; 
+            left: 20%;
+            right:20%;
+        } 
+        @include media-breakpoint-down(md) {
+            width:70%; 
+            left: 15%;
+            right:15%;
+            bottom: 5px;
+        }
+        @include media-breakpoint-down(sm) {
+            width:80%; 
+            left: 10%;
+            right:10%;
+        }
+        @include media-breakpoint-down(xs) {
+            width:90%; 
+            left: 5%;
+            right:5%;
+        }
+                padding-left: 175px;
+                padding-right: 175px;
+
+        li {
+            display: flex;
+            margin: 0 3px;
+            width: auto;
+            height: auto;
+            button {
+               border:0;
+               width: 6px;
+               height: 6px;
+               text-indent: -9999px;
+               line-height: 0;
+               font-size: 0;
+                background: #DEDEDE;
+            }
+
+            &.slick-active {
+               button {
+                    background: $primary;
+                }
+            }
+        }
+    }
+    
+    
+}
+
+.home-slider {
+    .slick-track {
+        display: flex;
+    }
+
+    .slick-slide {
+        height: inherit;
+
+        & > div {
+            height: 100%;
+        }
+    }
+
+    .slide {
+        height: 100%;
+
+        img {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.experience-tabs{
+    .automobile-slider{
+        .slick-arrow{
+            bottom: 20px;
+        }
+    }
+    .slick-arrow{
+        position: absolute;
+        bottom: 5px;
+        top: inherit;
+        transform: none;
+        &.slick-prev{
+            html[dir='ltr'] & {
+                left: 20%;
+                margin-left: -20px;
+                @media (max-width: 1300px){
+                    left: 15%;
+                }
+            }
+            html[dir='rtl'] & {
+                right: 20%;
+                margin-right: -20px;
+                @media (max-width: 1300px){
+                    right: 15%;
+                }
+            }
+        }
+        &.slick-next{
+            html[dir='ltr'] & {
+                right: 20%;
+                margin-right: 20px;
+                @media (max-width: 1300px){
+                    right: 15%;
+                }
+            }
+            html[dir='rtl'] & {
+                left: 20%;
+                margin-left: -20px;
+                @media (max-width: 1300px){
+                    left: 15%;
+                }
+            }
+        }
+    }
+    html[dir='rtl'] & {
+        .slick-track{
+            display: flex;
+        }
+    }
+}
+
+.latest-news-container{
+    .slick-arrow{
+        top: inherit;
+        bottom: 200px;
+        &:hover, &:focus{
+            background-color: $primary;
+            color: $white;
+            border: $primary;
+            &::before{
+                border-color: $white;
+            }
+        }
+        &.slick-prev{
+            html[dir='ltr'] &{
+                left: 15px !important;
+            }
+            html[dir='rtl'] &{
+                right: 15px !important;
+            }
+        }
+        &.slick-next{
+            html[dir='ltr'] &{
+                right: 15px !important;
+            }
+            html[dir='rtl'] &{
+                left: 15px !important;
+            }
+        }
+    }
+    .latest-news-box{
+        img{
+          height: 430px;
+        }
+    }
+    .slick-track{
+        display: flex;
+        .slick-slide{
+            height: auto;
+            & > div{
+                height: 100%;
+            }
+        }
+    }
+}

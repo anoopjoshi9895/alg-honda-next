@@ -1,0 +1,63 @@
+.custom-rating {
+    &-input {
+        position: absolute;
+        top: -9999px;
+    }
+
+    &-result {
+        display: inline-block;
+        color: $gray-700;
+        font-size: rem(14);
+    }
+
+    &-outer {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .rating-input + label {
+        html[dir="ltr"] & {
+            padding-left: 0;
+        }
+
+        html[dir="rtl"] & {
+            padding-right: 0;
+        }
+
+        &:before,
+        &:after {
+            display: none;
+        }
+    }
+}
+
+.custom-rating:not(:checked) > label {
+    cursor: pointer;
+    font-size: 17px;
+    color: #B8B8B8;
+    margin: 0 2px;
+
+    html[dir='ltr'] & {
+        float: right;
+    }
+
+    html[dir='rtl'] & {
+        float: left;
+    }
+}
+
+.custom-rating > input:checked ~ label,
+.custom-rating:not(:checked) > label:hover,
+.custom-rating:not(:checked) > label:hover ~ label,
+.custom-rating > input:checked + label:hover,
+.custom-rating > input:checked + label:hover ~ label,
+.custom-rating > input:checked ~ label:hover,
+.custom-rating > input:checked ~ label:hover ~ label,
+.custom-rating > label:hover ~ input:checked ~ label {
+    color: $primary;
+
+    i:before {
+        content: "\e92a";
+    }
+}

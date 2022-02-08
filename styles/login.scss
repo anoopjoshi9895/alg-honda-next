@@ -1,0 +1,59 @@
+@import "custom/common-import";
+@import "custom/tabs";
+
+.account-outer {
+    min-height: 100vh;
+
+    .account-box {
+        max-width: 570px;
+        margin: 0 auto;
+
+        .message-validation {
+            position: static;
+        }
+
+        &-inner {
+            max-width: 461px;
+            margin: 0 auto;
+        }
+
+        .tab-underline {
+            .nav-link {
+                color: $gray-700;
+                padding: 10px;
+
+                &:before {
+                    height: 2px;
+                }
+
+                &.active {
+                    font-weight: $font-weight-bold;
+                }
+            }
+        }
+
+        .social-link {
+            padding: 14px;
+
+            i {
+                line-height: 46px;
+            }
+        }
+
+        .forgot-link,
+        .account-check label {
+            font-size: rem(13);
+        }
+
+        .otp {
+            max-width: 320px;
+
+            input[type="text"] {
+                font-size: rem(30);
+                text-align: center;
+                height: auto;
+                padding: 7px;
+            }
+        }
+    }
+}

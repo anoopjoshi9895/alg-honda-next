@@ -1,0 +1,33 @@
+@import 'custom/common-import';
+.blog-img{
+    @include media-breakpoint-up(md){
+        height: 250px;
+    }
+    @include media-breakpoint-up(xl){
+        height: 300px;
+    }
+}
+.blog-detail{
+    max-width: 900px;
+	width: 100%;
+	.img-large{
+		border-radius: 6px;
+	}
+	.social-icons{
+		    top: 170px;
+            left: -80px;
+          @include media-breakpoint-down(lg){
+           position: static !important;
+          }
+		a{
+			span{
+				font-size: rem(21);
+            }
+            &:hover{
+               span{
+                color: $primary;   
+               } 
+            }
+		}
+	}
+}

@@ -1,0 +1,213 @@
+/* Slider */
+
+.slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+.slick-list {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    margin: 0;
+    padding: 0;
+
+    &:focus {
+        outline: none;
+    }
+
+    &.dragging {
+        cursor: pointer;
+        cursor: hand;
+    }
+}
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+    transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+    position: relative;
+    left: 0;
+    top: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+
+    .slick-loading & {
+        visibility: hidden;
+    }
+}
+.slick-slide {
+    float: left;
+    height: 100%;
+    min-height: 1px;
+    [dir="rtl"] & {
+        float: right;
+    }
+    img {
+        display: block;
+    }
+    &.slick-loading img {
+        display: none;
+    }
+
+    display: none;
+
+    &.dragging img {
+        pointer-events: none;
+    }
+
+    .slick-initialized & {
+        display: block;
+    }
+
+    .slick-loading & {
+        visibility: hidden;
+    }
+
+    .slick-vertical & {
+        display: block;
+        height: auto;
+        border: 1px solid transparent;
+    }
+}
+.slick-arrow{
+    &.slick-disabled{
+        opacity: 0.5;
+        cursor: default;
+    }
+    &.slick-hidden {
+        display: none;
+    }
+    position: absolute;
+    top: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    width: 46px;
+    height: 46px;
+    border: #A8A8A8 1.5px solid;
+    background: $white;
+    overflow: hidden;
+    color:#A8A8A8;
+    z-index: 100;
+    transform: translateY(-50%);
+    i:before{
+       color:#A8A8A8;
+    }
+    //box-shadow: 0px 4px 4px rgba($dark, 0.25);
+    &.slick-prev{
+        text-indent: -9999px;
+        html[dir="ltr"] & {
+			left: -30px;
+		}
+		html[dir="rtl"] & {
+			right: -30px;
+		}
+        &:before{
+            content: "";
+            border-left: $gray-900 2px solid;
+            border-bottom: $gray-900 2px solid;
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -5px 0 0 -4px;
+            display: block;
+            z-index: 11;
+            html[dir="ltr"] & {
+                transform: rotate(45deg);
+            }
+            html[dir="rtl"] & {
+                transform: rotate(-135deg);
+            }
+        }
+    }
+    &.slick-next{
+        text-indent: -9999px;
+        html[dir="ltr"] & {
+			right: -30px;
+		}
+		html[dir="rtl"] & {
+			left: -30px;
+		}
+        &:before{
+            content: "";
+            border-right: $gray-900 2px solid;
+            border-top: $gray-900 2px solid;
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -5px 0 0 -6px;
+            display: block;
+            z-index: 11;
+
+            html[dir="ltr"] & {
+                transform: rotate(45deg);
+            }
+            html[dir="rtl"] & {
+                transform: rotate(-135deg);
+            }
+        }
+    }
+    &:hover{
+        color: $primary;
+        border-color:$primary;
+         i:before{
+           color:$primary;
+        }
+        &:before{
+            border-color: $primary;
+        }
+    }
+}
+
+.slick-dots{
+    list-style-type: none;
+    padding: 0;
+    
+    display: flex;
+    justify-content: center;
+    li{
+        button{
+            font-size: 0;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 1px solid $white;
+            padding: 0;
+            transition: all 0.3s ease-in-out;
+        }
+        &.slick-active{
+            button{
+                background-color: $white;
+            }
+        }
+        &+li{
+            margin-left: 6px;
+        }
+    }
+}

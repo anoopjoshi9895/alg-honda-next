@@ -1,0 +1,172 @@
+@import 'custom/common-import';
+@import 'custom/banner';
+
+.landing {
+  line-height: rem(23);
+}
+
+.subText {
+  max-width: 806px;
+}
+
+.subContainer {
+  max-width: 1278px;
+}
+
+.list {
+  .img-lg {
+    height: rem(426);
+  }
+
+  .img-sm {
+    height: rem(235);
+  }
+}
+
+.ad-block {
+  .img-sm {
+    height: rem(282);
+  }
+
+  .img-lg {
+    height: rem(477);
+  }
+
+  h4 {
+    line-height: rem(37);
+  }
+
+  .percentage {
+    font-size: rem(90);
+  }
+}
+
+.insurance-img-block {
+  background: rgb(255, 255, 255);
+  background: -moz-linear-gradient(
+    top,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(243, 243, 243, 1) 50%,
+    rgba(243, 243, 243, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(243, 243, 243, 1) 50%,
+    rgba(243, 243, 243, 1) 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(243, 243, 243, 1) 50%,
+    rgba(243, 243, 243, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f3f3f3',GradientType=0 );
+}
+
+.insurace-label-block {
+  max-width: 206px;
+  max-height: 156px;
+  @include media-breakpoint-down(md) {
+    min-width: 206px;
+  }
+  @include media-breakpoint-down(sm) {
+    max-width: 130px;
+    min-width: 130px;
+  }
+}
+
+.insurance-feature-block {
+  max-width: 290px;
+  max-height: 156px;
+  @include media-breakpoint-down(md) {
+    min-width: 290px;
+  }
+  .img-clip {
+    height: 180px;
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% 87%,
+      50% 87%,
+      50% 100%,
+      50% 87%,
+      0 87%
+    );
+    transition: all 0.3s ease-in-out;
+  }
+
+  &.active {
+    .img-clip {
+      clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 87%,
+        58% 87%,
+        50% 100%,
+        41% 87%,
+        0 87%
+      );
+    }
+  }
+  .insurance-type-head {
+    height: 156px;
+  }
+}
+
+.insurance-type-features {
+  &:nth-child(even) {
+    div {
+      background-color: $gray-100;
+    }
+  }
+  div {
+    padding: rem(18) rem(20) !important;
+    background-color: $white;
+    html[dir='ltr'] & {
+      border-right: $border-color 1px solid;
+    }
+
+    html[dir='rtl'] & {
+      border-left: $border-color 1px solid;
+    }
+    &:last-child {
+      html[dir='ltr'] & {
+        border-right: 0;
+      }
+
+      html[dir='rtl'] & {
+        border-left: 0;
+      }
+    }
+  }
+  &:last-child {
+    div {
+      border-bottom: 1px solid $border-color;
+    }
+  }
+}
+.book-appointment {
+  textarea {
+    height: 150px !important;
+  }
+}
+
+.car-service-contentarea{
+  max-width: 926px;
+  h2{
+    font-size: $h1-font-size;
+    margin-bottom: rem(20);
+  }
+  h4{
+    font-size: rem(26);
+    margin-bottom: rem(10);
+    font-weight: $font-weight-normal;
+  }
+  p{
+    color: $gray-700;
+  }
+}

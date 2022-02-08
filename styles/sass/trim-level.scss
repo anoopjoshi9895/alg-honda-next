@@ -1,0 +1,248 @@
+@import 'custom/common-import';
+@import 'custom/tabs';
+@import 'custom/tooltip';
+@import 'plugins/icomoon';
+
+.trim-content {
+  // max-width: 455px;
+}
+.trim-image {
+  // max-width: 610px;
+  // margin-bottom: 3rem !important;
+  @include media-breakpoint-up(lg) {
+    max-height: 259px;
+    min-height: 190px;
+    // padding-top: rem(110);
+    img {
+      max-width: 350px;
+    }
+  }
+  // img {
+  //   max-height: 350px;
+  // }
+}
+
+.trim-level-products {
+  &:last-child {
+    border-bottom: 0 !important;
+  }
+  @include media-breakpoint-down(md) {
+    border-bottom: 0 !important;
+    // &:not(.active) {
+    //   display: none;
+    // }
+  }
+  &:hover{
+    .trim-footer{
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+.trim-footer {
+  @include media-breakpoint-up(lg) {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+  @include media-breakpoint-down(md) {
+    // position: fixed;
+    .btn-link {
+      background-color: $gray-300;
+    }
+  }
+}
+
+.compare-popup {
+  .modal-dialog {
+    max-width: none !important;
+  }
+}
+
+.small-popup {
+  .modal-dialog {
+    max-width: 100 !important;
+  }
+}
+
+.row-compare {
+  @include media-breakpoint-down(md) {
+    background-color: $white;
+  }
+  // @media (max-width: 425px) {
+  //   display: table;
+  // }
+  .compare-car {
+    min-width: 220px;
+    max-width: 220px;
+    html[dir='ltr'] & {
+      border-right: 2px solid $white;
+    }
+    html[dir='rtl'] & {
+      border-left: 2px solid $white;
+    }
+    img {
+      max-height: 78px;
+    }
+    // @include media-breakpoint-down(lg) {
+    //   min-width: 126px;
+    //   max-width: 126px;
+    // }
+    @include media-breakpoint-down(md) {
+      // min-width: 106px;
+      // max-width: inherit;
+      display: table-cell;
+    }
+  }
+  .compare-carfeature {
+    min-width: 220px;
+    max-width: 220px;
+    // @include media-breakpoint-down(lg) {
+    //   min-width: 126px;
+    //   max-width: 126px;
+    // }
+    @include media-breakpoint-down(md) {
+      // min-width: 106px;
+      // max-width: inherit;
+      border-bottom: 1px solid $border-color;
+      html[dir='ltr'] & {
+        border-right: $border-color 1px solid;
+      }
+  
+      html[dir='rtl'] & {
+        border-left: $border-color 1px solid;
+      }
+      display: table-cell;
+      &:last-child {
+        html[dir='ltr'] & {
+          border-right: none;
+        }
+    
+        html[dir='rtl'] & {
+          border-left: none;
+        }
+      }
+    }
+  }
+}
+
+.compare-carfeature-row {
+  &:nth-child(even) {
+    background-color: $gray-200;
+  }
+  @include media-breakpoint-down(lg) {
+    background-color: $gray-200;
+  }
+}
+
+.compare-tabContent {
+  @media (max-width: 425px) {
+    .row {
+      display: table;
+    }
+  }
+}
+
+.product-list {
+  min-height: 400px;
+  .slick-list{
+    overflow: inherit;
+  }
+  .slick-track{
+    margin-left: 0;
+  }
+}
+
+.btn-trim {
+  padding: 6px 17px 4px 17px;
+  background-color: $gray-100;
+  &:hover {
+      background-color: $primary;
+      color: $white !important;
+  }
+}
+
+.compare-car-name{
+  height: 169px;
+}
+
+.compare-slider{
+  .slick-track{
+    margin: 0;
+  }
+  .slick-prev, .slick-next{
+    width: 30px;
+    height: 30px;
+    top: 83px;
+    border: 0;
+    background-color: $white;
+    box-shadow: 0 2px 6px rgba($black, 0.3);
+    &::before{
+      font-family: 'icomoon' !important;
+      text-indent: 0;
+      font-size: rem(20);
+      color: $black;
+      border: 0 !important;
+      transform: none !important;
+      width: 30px !important;
+      height: 30px !important;
+      top: 0 !important;
+      left: 0 !important;
+      margin: 0 !important;
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .slick-arrow.slick-prev{
+    html[dir='ltr'] & {
+      left: -15px;
+    }
+    html[dir='rtl'] & {
+      right: -15px;
+    }
+    &::before{
+      content: "\e906" !important;
+      html[dir='rtl'] & {
+          transform: rotate(180deg) !important;
+      }
+    }
+    @include media-breakpoint-down(xs) {
+      html[dir='ltr'] & {
+        left: 0px;
+      }
+      html[dir='rtl'] & {
+        right: 0px;
+      }
+    }
+  }
+  .slick-arrow.slick-next{
+    html[dir='ltr'] & {
+      right: -15px;
+    }
+    html[dir='rtl'] & {
+      left: -15px;
+    }
+    &::before{
+      content: "\e91e" !important;
+      html[dir='rtl'] & {
+          transform: rotate(-180deg) !important;
+      }
+    }
+    @include media-breakpoint-down(xs) {
+      html[dir='ltr'] & {
+        right: 0px;
+      }
+      html[dir='rtl'] & {
+        left: 0px;
+      }
+    }
+  }
+}
+
+.compare-accord-head{
+  @include media-breakpoint-down(md) {
+    font-size: 13px !important;
+  }
+}

@@ -1,0 +1,143 @@
+@import 'custom/common-import';
+@import "plugins/slick";
+@import 'custom/banner';
+@import 'custom/tabs';
+
+.select-model {
+  width: 128px;
+  [class*='-control'] {
+    background-color: $white;
+    border-color: $white;
+    border-radius: 0;
+    box-shadow: none;
+    &:focus,
+    &:hover,
+    &:active {
+      border-color:$white;
+      box-shadow: none;
+    }
+    .css-1uccc91-singleValue {
+      font-size: rem(18);
+    }
+    
+  }
+  .css-9gakcf-option{
+    background-color: $primary;
+  }
+  .css-1n7v3ny-option:active{
+    background-color: $primary;
+    color: #fff;
+  }
+  .css-1n7v3ny-option {
+    background-color:lighten($primary,50%);
+  }
+}
+
+.vechile-tab-container {
+  // max-width: 1160px;
+  .tab-pane {
+    min-height: 268px;
+  }
+  .slick-list{
+    // overflow: inherit;
+    .slick-track{
+      margin: 0;
+    }
+  }
+}
+
+.productBox {
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background: $gray-400;
+    figure{
+      &:after{
+        background: $gray-400;
+      }
+    }
+    .productBox__select {
+      visibility: visible;
+      opacity: 1;
+      top: 0;
+    }
+  }
+  figure {
+    height: 190px;
+    background-size: cover;
+    overflow: hidden;
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: $white;
+      z-index: 0;
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1.1);
+      transition: all 0.3s ease-in-out;
+    }
+    img{
+      max-height: 260px;
+      max-width: 350px;
+      mix-blend-mode: multiply;
+    }
+    // @include media-breakpoint-down(sm) {
+    //   height: 240px;
+    // }
+    // @include media-breakpoint-down(xs) {
+    //   height: 200px;
+    // }
+  }
+  figcaption {
+    padding: 0 rem(35) rem(35);
+    text-align: center;
+    @include media-breakpoint-down(md) {
+      padding: 0 rem(16) rem(16);
+    }
+  }
+  &__select {
+    @include media-breakpoint-up(lg) {
+      visibility: hidden;
+      opacity: 0;
+      top: -10px;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}
+
+.top-N50{
+  top: -50px;
+}
+
+.social-slider{
+  .slick-dots{
+    position: absolute;
+    width: 100%;
+    display: flex !important;
+    bottom: 20px;
+    li{
+      width: 9px;
+      button{
+        width: 9px;
+        &::before{
+            display: none;
+        }
+      }
+    }
+  }
+  .slick-list{
+      height: 100%;
+      .slick-track{
+          height: 100%;
+          .slick-slide{
+              height: 100%;
+              & > div{
+                  height: 100%;
+              }
+          }
+      }
+  }
+}

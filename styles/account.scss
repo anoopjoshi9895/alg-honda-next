@@ -1,0 +1,320 @@
+@import 'custom/common-import';
+@import 'custom/tabs';
+@import 'custom/rating';
+
+.account-menu {
+  @include media-breakpoint-up(lg) {
+    max-width: 262px;
+
+    .nav-pills {
+      .nav-item {
+        .nav-link {
+          min-height: 44px;
+
+          &.active {
+            background-color: $primary;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}
+
+.avatar {
+  img {
+    width: 45px;
+    height: 45px;
+  }
+
+  &-sm img {
+    width: 36px;
+    height: 36px;
+  }
+
+  &-xs img {
+    width: 28x;
+    height: 28px;
+  }
+}
+
+.get-support {
+  background-color: #fffaf4;
+}
+
+.activities-list {
+  line-height: 21px;
+
+  .icon-ellipsis {
+    font-size: 4px;
+  }
+
+  .address-title {
+    font-size: 14px;
+  }
+
+  .rating-sec {
+    min-width: 122px;
+  }
+
+  .avatar {
+    img {
+      width: 36px;
+      height: 36px;
+    }
+  }
+}
+
+.action-block {
+  .action-popup {
+    box-shadow: 2px 2px 22px -6px rgba(0, 0, 0, 0.2);
+    transform: translateY(100%);
+    display: none;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    min-width: 80px;
+
+    li a {
+      color: $gray-900;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+
+    &.add-popup {
+      min-width: 132px;
+    }
+  }
+
+  &.active {
+    .action-popup {
+      display: block;
+      opacity: 1;
+    }
+  }
+}
+
+.progress {
+  height: 4px;
+
+  &--lg {
+    height: 8px;
+    background-color: rgba(#c4c4c4, 0.4);
+  }
+
+  &-bar {
+    transition: all 0.3s ease-in-out;
+  }
+
+  &-split {
+    &::after {
+      content: '';
+      width: 2px;
+      height: 100%;
+      display: inline-block;
+      background-color: $white;
+      position: absolute;
+      top: 0;
+    }
+  }
+}
+
+.configuration-progress {
+  max-width: 145px;
+
+  @include media-breakpoint-up(xl) {
+    position: absolute;
+    bottom: -37px;
+    width: 100%;
+  }
+}
+
+.check-fill {
+  input:not(:checked) + label,
+  input:checked + label {
+    margin-bottom: 10px;
+
+    html[dir='ltr'] &,
+    html[dir='rtl'] & {
+      padding: 13px 8px;
+    }
+
+    &:before,
+    &:after {
+      display: none;
+    }
+  }
+
+  input:not(:checked) + label {
+    border: 1px solid $border-color;
+    background-color: $white;
+  }
+
+  input:checked + label {
+    border: 1px solid $primary;
+    background-color: $primary;
+    color: $white;
+  }
+}
+
+.schedule-service-form {
+  max-width: 718px;
+
+  .btn-request {
+    padding: 11px 17px;
+  }
+}
+
+.round-shape {
+  width: 29px;
+  height: 29px;
+}
+
+.testDriveModal {
+  .modal-dialog {
+    max-width: 920px;
+  }
+}
+
+.line-height {
+  line-height: 23px;
+}
+
+.drag-drop-file {
+  .upload {
+    background-color: $white;
+    border: 1px dashed $border-color;
+    min-height: 114px;
+
+    .uploading-label {
+      display: none;
+    }
+
+    &.uploaded {
+      background-color: rgba($primary, 0.05);
+      border: 1px solid rgba($primary, 0.05);
+      color: $primary;
+
+      .default-upload-label {
+        display: none;
+      }
+
+      .uploading-label {
+        display: block;
+      }
+    }
+
+    .upload-progress {
+      max-width: 190px;
+      height: 6px;
+      background-color: rgba($primary, 0.3);
+      margin: 10px auto;
+    }
+  }
+}
+
+.user-table {
+  .icon-ellipsis {
+    font-size: 4px;
+    color: $gray-700;
+  }
+
+  th {
+    font-size: 12px;
+    font-weight: $font-weight-normal;
+    text-transform: uppercase;
+    color: $gray-700;
+    padding: 8px 0;
+
+    &:not(:first-child) {
+      padding: 8px rem(18);
+    }
+  }
+
+  td {
+    line-height: 21px;
+    font-size: 14px;
+    padding: rem(18);
+  }
+
+  @media only screen and (min-width: 1100px) {
+    tbody {
+      border: 1px solid $border-color;
+    }
+
+    td {
+      border-top: 1px solid $border-color;
+    }
+
+    .data-title {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: 1099.98px) {
+    table {
+      display: block;
+    }
+
+    thead {
+      display: none;
+    }
+
+    tbody {
+      width: 100%;
+      display: block;
+    }
+
+    tr {
+      border: 1px solid $border-color;
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+      padding: 5px;
+      padding-top: 22px;
+      margin-bottom: 12px;
+    }
+
+    td {
+      flex: 0 0 50%;
+      max-width: 50%;
+      display: block;
+      padding: 9px 10px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      &.action-td {
+        position: absolute;
+        top: 0;
+
+        html[dir='ltr'] & {
+          right: 0;
+        }
+
+        html[dir='rtl'] & {
+          left: 0;
+        }
+      }
+    }
+
+    .data-title {
+      display: block;
+    }
+  }
+}
+
+.service-detail {
+  .card-block {
+    .user-block {
+      max-width: 250px;
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .dashboard-nav {
+    text-transform: uppercase;
+  }
+}

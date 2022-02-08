@@ -1,0 +1,51 @@
+@import 'custom/common-import';
+.landing-slider{
+    background: url('/slider-bg.png') no-repeat;
+    background-size: cover;
+}
+
+.map-min-height{
+    @include media-breakpoint-up(md) {
+        min-height: 364px;
+    }
+}
+
+.map-box{
+    max-width: 955px;
+}
+
+.industry-box{
+    background-image: linear-gradient(to right, #dedede, #fafafa);
+}
+.agricultural-box{
+    background-image: linear-gradient(to right, #121212, #3c3c3c);
+}
+
+.powerproduct-listing {
+    figure {
+        height: 220px;
+        img{
+            max-height: 100%;
+        }
+    }
+    @include media-breakpoint-up(md) {
+        .btn{
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+        &:hover{
+            .btn{
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+    .btn-outline-secondary {
+      &:hover {
+        background: $primary !important;
+        color: $white !important;
+        border-color: $primary !important;
+      }
+    }
+}
